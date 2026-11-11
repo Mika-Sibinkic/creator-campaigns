@@ -1,0 +1,1062 @@
+[
+  {
+    "flow": "opener → counter → accept at the sent counter",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "Can you come up to $300?",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      },
+      {
+        "step": "Deal, that works for me.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "human_approval_required",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": 175,
+          "ceiling_usd": 200,
+          "rounds": 3,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15,
+              "unit_price_usd": null,
+              "schedule_note": null
+            },
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30,
+              "unit_price_usd": null,
+              "schedule_note": null
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "counter",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      },
+      {
+        "type": "holding_note",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "agreement_confirmation",
+        "body": "Deal, $175 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      },
+      {
+        "message_type": "counter",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "message_type": "agreement_confirmation",
+        "status": "sent",
+        "channel": "email",
+        "body": "Deal, $175 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      },
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [
+      {
+        "amount_usd": 175,
+        "status": "pending_human_review"
+      }
+    ],
+    "final": {
+      "status": "human_approval_required",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 175,
+      "agreed_amount_usd": 175,
+      "ceiling_usd": 200,
+      "rounds": 3,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15,
+          "unit_price_usd": null,
+          "schedule_note": null
+        },
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30,
+          "unit_price_usd": null,
+          "schedule_note": null
+        }
+      ]
+    }
+  },
+  {
+    "flow": "opener → immediate accept at the opening price",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "Sounds good, deal.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "human_approval_required",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": 150,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "agreement_confirmation",
+        "body": "Deal, $150 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      },
+      {
+        "message_type": "agreement_confirmation",
+        "status": "sent",
+        "channel": "email",
+        "body": "Deal, $150 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [
+      {
+        "amount_usd": 150,
+        "status": "pending_human_review"
+      }
+    ],
+    "final": {
+      "status": "human_approval_required",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 150,
+      "agreed_amount_usd": 150,
+      "ceiling_usd": 200,
+      "rounds": 2,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30
+        },
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15
+        }
+      ]
+    }
+  },
+  {
+    "flow": "opener (no price named) → counter → repeat ask",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "Can you come up to $300?",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      },
+      {
+        "step": "Still need $300.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "rejected",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 3,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "counter",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, would you be up for a collab?",
+        "offer_usd": null
+      },
+      {
+        "message_type": "counter",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      },
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [],
+    "final": {
+      "status": "rejected",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 175,
+      "agreed_amount_usd": null,
+      "ceiling_usd": 200,
+      "rounds": 3,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30
+        },
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15
+        }
+      ]
+    }
+  },
+  {
+    "flow": "fold: second email lands while our counter is queued",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "Can you come up to $300?",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      },
+      {
+        "step": "Seriously, $300 is my rate.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15,
+              "unit_price_usd": null,
+              "schedule_note": null
+            },
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30,
+              "unit_price_usd": null,
+              "schedule_note": null
+            }
+          ]
+        }
+      },
+      {
+        "step": "Still need $300.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "rejected",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 3,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15,
+              "unit_price_usd": null,
+              "schedule_note": null
+            },
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30,
+              "unit_price_usd": null,
+              "schedule_note": null
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "counter",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      },
+      {
+        "message_type": "counter",
+        "status": "superseded",
+        "channel": "email",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "message_type": "counter",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      },
+      {
+        "status": "processed"
+      },
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [],
+    "final": {
+      "status": "rejected",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 175,
+      "agreed_amount_usd": null,
+      "ceiling_usd": 200,
+      "rounds": 3,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15,
+          "unit_price_usd": null,
+          "schedule_note": null
+        },
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30,
+          "unit_price_usd": null,
+          "schedule_note": null
+        }
+      ]
+    }
+  },
+  {
+    "flow": "fold into an accept of the price they saw",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "Can you come up to $300?",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 175,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      },
+      {
+        "step": "Actually never mind, $150 works for me, send it over.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "human_approval_required",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": 150,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15,
+              "unit_price_usd": null,
+              "schedule_note": null
+            },
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30,
+              "unit_price_usd": null,
+              "schedule_note": null
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "agreement_confirmation",
+        "body": "Deal, $150 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      },
+      {
+        "message_type": "counter",
+        "status": "superseded",
+        "channel": "email",
+        "body": "Thanks for getting back to me. I can do $175 for 1 30-second reel and 1 15-second story within 2 weeks. Does that work on your end?",
+        "offer_usd": 175
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Thanks for getting back to me. Give me a few minutes to check a couple of things and I'll reply in the next 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "message_type": "agreement_confirmation",
+        "status": "sent",
+        "channel": "email",
+        "body": "Deal, $150 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      },
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [
+      {
+        "amount_usd": 150,
+        "status": "pending_human_review"
+      }
+    ],
+    "final": {
+      "status": "human_approval_required",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 150,
+      "agreed_amount_usd": 150,
+      "ceiling_usd": 200,
+      "rounds": 2,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15,
+          "unit_price_usd": null,
+          "schedule_note": null
+        },
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30,
+          "unit_price_usd": null,
+          "schedule_note": null
+        }
+      ]
+    }
+  },
+  {
+    "flow": "counter inside the ceiling is accepted at their number",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "ok how about $180 and we are done",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "human_approval_required",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": 180,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": [
+            {
+              "promo_type": "reel",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 30
+            },
+            {
+              "promo_type": "story",
+              "quantity": 1,
+              "delivery_window_days": 14,
+              "min_seconds": 15
+            }
+          ]
+        }
+      }
+    ],
+    "sent": [
+      {
+        "type": "holding_note",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      },
+      {
+        "type": "agreement_confirmation",
+        "body": "Deal, $180 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      }
+    ],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      },
+      {
+        "message_type": "agreement_confirmation",
+        "status": "sent",
+        "channel": "email",
+        "body": "Deal, $180 works. So we're locked in for 1 30-second reel and 1 15-second story within 2 weeks. You'll get a quick payment-setup email from us next, and the promo pack follows right after that. Glad to have you on this one.",
+        "offer_usd": null
+      },
+      {
+        "message_type": "holding_note",
+        "status": "sent",
+        "channel": "email",
+        "body": "Great, thanks. Let me get things lined up on my side and I'll confirm everything within 15 minutes.\n\nExample Records",
+        "offer_usd": null
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [
+      {
+        "amount_usd": 180,
+        "status": "pending_human_review"
+      }
+    ],
+    "final": {
+      "status": "human_approval_required",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 150,
+      "agreed_amount_usd": 180,
+      "ceiling_usd": 200,
+      "rounds": 2,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": [
+        {
+          "promo_type": "reel",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 30
+        },
+        {
+          "promo_type": "story",
+          "quantity": 1,
+          "delivery_window_days": 14,
+          "min_seconds": 15
+        }
+      ]
+    }
+  },
+  {
+    "flow": "creator declines",
+    "steps": [
+      {
+        "step": "opener",
+        "offer": {
+          "status": "offered",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 1,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      },
+      {
+        "step": "No thanks, not interested.",
+        "tally": {
+          "processed": 1,
+          "sent": 0,
+          "flagged": 0,
+          "skipped": 0
+        },
+        "offer": {
+          "status": "rejected",
+          "initial_offer_usd": 150,
+          "current_offer_usd": 150,
+          "agreed_amount_usd": null,
+          "ceiling_usd": 200,
+          "rounds": 2,
+          "opening_pct": 0.75,
+          "autonomy_mode": "auto",
+          "injection_flagged": null,
+          "agreed_deliverables": null
+        }
+      }
+    ],
+    "sent": [],
+    "outbound": [
+      {
+        "message_type": "initial",
+        "status": "sent",
+        "channel": "email",
+        "body": "Hey, $150 for 1 reel + 1 story",
+        "offer_usd": 150
+      }
+    ],
+    "inbound": [
+      {
+        "status": "processed"
+      }
+    ],
+    "payments": [],
+    "final": {
+      "status": "rejected",
+      "initial_offer_usd": 150,
+      "current_offer_usd": 150,
+      "agreed_amount_usd": null,
+      "ceiling_usd": 200,
+      "rounds": 2,
+      "opening_pct": 0.75,
+      "autonomy_mode": "auto",
+      "injection_flagged": null,
+      "agreed_deliverables": null
+    }
+  }
+]

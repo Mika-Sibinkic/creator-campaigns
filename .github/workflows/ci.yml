@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  ci:
+    name: Typecheck, lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: dashboard
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      # npm test runs every tests/*.test.ts file (see
+      # tools/run-all-tests.mjs) and fails if any fail. No secrets needed.
+      - name: Test
+        run: npm test
+
+      # Needs no env vars; every key is read on first use, not at import.
+      - name: Build
+        run: npm run build
+
+      # The QUICKSTART "Try it without accounts" check.
+      - name: Demo check
+        run: npx tsx tools/seed-sample-analytics.mjs --verify

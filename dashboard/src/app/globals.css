@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── Core palette wiring (consumed by shadcn) ────────────────────────── */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, monospace;
+
+  /* ── Type scale. Four roles, real contrast between them. ─────────────── */
+  --text-page-title: 1.5rem;
+  --text-page-title--line-height: 2rem;
+  --text-page-title--letter-spacing: -0.018em;
+  --text-page-title--font-weight: 600;
+  --text-section-title: 0.9375rem;
+  --text-section-title--line-height: 1.375rem;
+  --text-section-title--font-weight: 600;
+  --text-meta: 0.8125rem;
+  --text-meta--line-height: 1.25rem;
+  --text-kpi: 1.75rem;
+  --text-kpi--line-height: 2.125rem;
+  --text-kpi--letter-spacing: -0.02em;
+  --text-kpi--font-weight: 600;
+
+  --color-faint: var(--faint);
+  --color-attention: var(--attention);
+  --color-attention-border: var(--attention-border);
+  --color-attention-fg: var(--attention-fg);
+  /* Display font (Google Fonts OFL, wired in layout.tsx). Geist stays the
+     body/numeric face and also drives headings. */
+  --font-display: var(--font-fraunces), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* ── Brand tokens (indigo = the single accent) ─────────────────────── */
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-strong: var(--brand-accent-strong);
+  --color-brand-accent-deep: var(--brand-accent-deep);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-paper-2: var(--brand-paper-2);
+  --color-brand-hairline: var(--brand-hairline);
+
+  /* ── Status palette (Auto-ATS state machine) ─────────────────────────── */
+  --color-status-sourced: var(--status-sourced);
+  --color-status-sourced-fg: var(--status-sourced-fg);
+  --color-status-outreach: var(--status-outreach);
+  --color-status-outreach-fg: var(--status-outreach-fg);
+  --color-status-reply: var(--status-reply);
+  --color-status-reply-fg: var(--status-reply-fg);
+  --color-status-negotiation: var(--status-negotiation);
+  --color-status-negotiation-fg: var(--status-negotiation-fg);
+  --color-status-locked: var(--status-locked);
+  --color-status-locked-fg: var(--status-locked-fg);
+  --color-status-payout-pending: var(--status-payout-pending);
+  --color-status-payout-pending-fg: var(--status-payout-pending-fg);
+  --color-status-payout-complete: var(--status-payout-complete);
+  --color-status-payout-complete-fg: var(--status-payout-complete-fg);
+  --color-status-flagged: var(--status-flagged);
+  --color-status-flagged-fg: var(--status-flagged-fg);
+
+  /* ── Paper-money accent ──────────────────────────────────────────────── */
+  --color-paper-money: var(--paper-money);
+  --color-paper-money-fg: var(--paper-money-fg);
+
+  /* ── Radius scale ────────────────────────────────────────────────────── */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Motion tokens ───────────────────────────────────────────────────── */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 320ms;
+}
+
+/* ── LIGHT THEME (default) ──────────────────────────────────────────────── */
+:root {
+  /* ── Brand — indigo is the SINGLE accent ──────────────────────────────── */
+  --brand-accent: oklch(0.640 0.150 275);        /* accent */
+  --brand-accent-strong: oklch(0.510 0.170 275); /* AA-safe filled primary w/ white text */
+  --brand-accent-deep: oklch(0.450 0.160 275);   /* hover / pressed */
+  --brand-ink: oklch(0.20 0.010 275);
+  --brand-paper-2: oklch(0.970 0 0);
+  --brand-hairline: oklch(0.885 0 0);
+
+  /* Neutral scale. Slate, hue 250, very low chroma. Three text weights only:
+     foreground (primary), muted-foreground (secondary), faint (tertiary). */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.23 0.015 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.23 0.015 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.23 0.015 255);
+  --faint: oklch(0.55 0.012 255);
+
+  /* Primary = brand accent. The only saturated colour that is not a warning. */
+  --primary: var(--brand-accent-strong);
+  --primary-foreground: oklch(0.99 0 0);
+
+  --secondary: oklch(0.968 0.004 255);
+  --secondary-foreground: oklch(0.30 0.015 255);
+  --muted: oklch(0.975 0.003 255);
+  --muted-foreground: oklch(0.50 0.016 255);
+  --accent: oklch(0.962 0.006 255);
+  --accent-foreground: oklch(0.23 0.015 255);
+  --destructive: oklch(0.56 0.20 25);
+
+  --border: oklch(0.925 0.006 255);
+  --input: oklch(0.89 0.008 255);
+  --ring: var(--brand-accent);
+
+  /* Attention: the one loud surface on a page. Reserved for "this needs you". */
+  --attention: oklch(0.975 0.035 85);
+  --attention-border: oklch(0.86 0.09 80);
+  --attention-fg: oklch(0.40 0.11 65);
+
+  /* Chart palette (chart-1 = accent primary series; 2–5 qualitative fallback) */
+  --chart-1: var(--brand-accent-strong); /* accent — primary */
+  --chart-2: oklch(0.65 0.15 215); /* sky */
+  --chart-3: oklch(0.75 0.16 80);  /* amber */
+  --chart-4: oklch(0.65 0.18 145); /* emerald */
+  --chart-5: oklch(0.60 0.18 35);  /* orange */
+
+  --radius: 0.5rem;
+
+  /* Sidebar surfaces. A shade off the canvas so the content reads as the page. */
+  --sidebar: oklch(0.977 0.003 255);
+  --sidebar-foreground: oklch(0.36 0.015 255);
+  --sidebar-primary: var(--brand-accent-strong);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.935 0.006 255);
+  --sidebar-accent-foreground: oklch(0.20 0.015 255);
+  --sidebar-border: oklch(0.925 0.006 255);
+  --sidebar-ring: var(--brand-accent);
+
+  /* ── Status palette (light). Progress states are neutral on purpose: a deal
+        moving forward is not news. Colour is spent only where a person has to
+        act (reply, payout-pending: amber), where something broke (flagged:
+        red), and on the one terminal success (paid: green). ── */
+  --status-sourced: oklch(0.955 0.004 255);
+  --status-sourced-fg: oklch(0.45 0.016 255);
+  --status-outreach: oklch(0.955 0.004 255);
+  --status-outreach-fg: oklch(0.40 0.016 255);
+  --status-reply: oklch(0.955 0.06 85);
+  --status-reply-fg: oklch(0.42 0.11 65);
+  --status-negotiation: oklch(0.955 0.004 255);
+  --status-negotiation-fg: oklch(0.40 0.016 255);
+  --status-locked: oklch(0.955 0.004 255);
+  --status-locked-fg: oklch(0.30 0.016 255);
+  --status-payout-pending: oklch(0.955 0.06 85);
+  --status-payout-pending-fg: oklch(0.42 0.11 65);
+  --status-payout-complete: oklch(0.955 0.04 150);
+  --status-payout-complete-fg: oklch(0.42 0.10 150);
+  --status-flagged: oklch(0.955 0.035 25);
+  --status-flagged-fg: oklch(0.48 0.17 25);
+
+  /* Paper-money: amber-warm, non-alarming */
+  --paper-money: oklch(0.93 0.08 75);
+  --paper-money-fg: oklch(0.36 0.13 75);
+}
+
+/* ── DARK THEME ─────────────────────────────────────────────────────────── */
+.dark {
+  /* ── Brand — dark-tuned (accent lifts to stay legible on ink) ─────── */
+  --brand-accent: oklch(0.74 0.13 275);          /* accent, lifted */
+  --brand-accent-strong: oklch(0.74 0.13 275);   /* primary fill (dark text) */
+  --brand-accent-deep: oklch(0.66 0.14 275);     /* hover / pressed */
+  --brand-ink: oklch(0.97 0.005 275);
+  --brand-paper-2: oklch(0.20 0.01 235);
+  --brand-hairline: oklch(1 0 0 / 12%);
+
+  --background: oklch(0.16 0.01 235);
+  --foreground: oklch(0.97 0.005 235);
+  --card: oklch(0.20 0.01 235);
+  --card-foreground: oklch(0.97 0.005 235);
+  --popover: oklch(0.20 0.01 235);
+  --popover-foreground: oklch(0.97 0.005 235);
+
+  --primary: var(--brand-accent-strong);
+  --primary-foreground: oklch(0.18 0.02 238);
+
+  --secondary: oklch(0.26 0.01 235);
+  --secondary-foreground: oklch(0.95 0.005 235);
+  --muted: oklch(0.26 0.01 235);
+  --muted-foreground: oklch(0.72 0.005 235);
+  --accent: oklch(0.30 0.05 238);
+  --accent-foreground: oklch(0.92 0.05 238);
+  --destructive: oklch(0.65 0.22 27);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--brand-accent);
+
+  --chart-1: var(--brand-accent-strong);
+  --chart-2: oklch(0.72 0.15 215);
+  --chart-3: oklch(0.80 0.16 80);
+  --chart-4: oklch(0.72 0.18 145);
+  --chart-5: oklch(0.70 0.18 35);
+
+  --sidebar: oklch(0.18 0.01 235);
+  --sidebar-foreground: oklch(0.97 0.005 235);
+  --sidebar-primary: var(--brand-accent-strong);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.28 0.03 238);
+  --sidebar-accent-foreground: oklch(0.95 0.05 238);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: var(--brand-accent);
+
+  --faint: oklch(0.64 0.01 255);
+  --attention: oklch(0.26 0.04 75);
+  --attention-border: oklch(0.42 0.08 75);
+  --attention-fg: oklch(0.88 0.10 80);
+
+  /* ── Status palette (dark). Same rule as light: neutral unless it needs you. ── */
+  --status-sourced: oklch(0.27 0.01 255);
+  --status-sourced-fg: oklch(0.75 0.01 255);
+  --status-outreach: oklch(0.27 0.01 255);
+  --status-outreach-fg: oklch(0.80 0.01 255);
+  --status-reply: oklch(0.30 0.07 80);
+  --status-reply-fg: oklch(0.88 0.11 80);
+  --status-negotiation: oklch(0.27 0.01 255);
+  --status-negotiation-fg: oklch(0.80 0.01 255);
+  --status-locked: oklch(0.27 0.01 255);
+  --status-locked-fg: oklch(0.88 0.01 255);
+  --status-payout-pending: oklch(0.30 0.07 80);
+  --status-payout-pending-fg: oklch(0.88 0.11 80);
+  --status-payout-complete: oklch(0.29 0.05 150);
+  --status-payout-complete-fg: oklch(0.85 0.10 150);
+  --status-flagged: oklch(0.30 0.08 25);
+  --status-flagged-fg: oklch(0.85 0.12 25);
+
+  --paper-money: oklch(0.32 0.10 75);
+  --paper-money-fg: oklch(0.88 0.13 75);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  html {
+    @apply font-sans antialiased;
+  }
+  /* Tabular numerics where finance numbers live */
+  [data-tabular-nums], .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ── Brand chrome utilities (token-level; Geist stays the body face) ──── */
+@layer components {
+  /* Section titles: heading face, medium weight, small caps tracking. */
+  .heading-chrome {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  /* Tagline / editorial headline: Fraunces italic. */
+  .tagline-display {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+  }
+  /* Brand call-to-action read: UPPERCASE, tracked (pairs with outline/ghost/fill). */
+  .cta-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* ── Respect prefers-reduced-motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
