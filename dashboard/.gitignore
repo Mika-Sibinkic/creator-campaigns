@@ -1,0 +1,6 @@
+.claude/settings.local.json
+.claude/.session/
+.vercel
+.env*.local
+dashboard/supabase/.temp/
+/.clerk/

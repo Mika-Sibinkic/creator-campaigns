@@ -1,0 +1,51 @@
+{
+  "note": "SYNTHETIC EXAMPLE comments written for this test, not scraped. Each carries the label the classifier prompt asks for, so the test can check that (a) the prompt names the rule that covers it and (b) the parse + decision of those labels does not flag the creator.",
+  "posts": [
+    {
+      "post_url": "https://www.tiktok.com/@synthetic_creator/video/7000000000000000001",
+      "comments": [
+        { "text": "this is SICK", "label": "S", "rule": "sick" },
+        { "text": "filthy drop bro", "label": "S", "rule": "filthy" },
+        { "text": "this is trash I love it", "label": "S", "rule": "trash" },
+        { "text": "💀💀💀 the ending", "label": "S", "rule": "💀" },
+        { "text": "why am I crying 😭😭", "label": "S", "rule": "😭" },
+        { "text": "you ATE this", "label": "S", "rule": "ate" },
+        { "text": "goated fr", "label": "S", "rule": "goated" },
+        { "text": "this slaps so hard", "label": "S", "rule": "this slaps" },
+        { "text": "what's the song called?", "label": "N", "rule": "question" },
+        { "text": "@friend look", "label": "N", "rule": "tag" },
+        { "text": "nasty vocals omg", "label": "S", "rule": "nasty" },
+        { "text": "illegal how good this is", "label": "S", "rule": "illegal" }
+      ]
+    },
+    {
+      "post_url": "https://www.tiktok.com/@synthetic_creator/video/7000000000000000002",
+      "comments": [
+        { "text": "the other guy's cover was garbage, yours is the one", "label": "S", "rule": "third party" },
+        { "text": "the label did you dirty, this deserved more", "label": "S", "rule": "third party" },
+        { "text": "haters in here are clowns", "label": "S", "rule": "third party" },
+        { "text": "esto está brutal", "label": "S", "rule": "non-English" },
+        { "text": "c'est trop bien", "label": "S", "rule": "non-English" },
+        { "text": "this is so bad 😭😭 on repeat", "label": "S", "rule": "whole comment" },
+        { "text": "I'm dead 💀", "label": "S", "rule": "I'm dead" },
+        { "text": "first", "label": "N", "rule": "off-topic" },
+        { "text": "hard.", "label": "S", "rule": "hard" },
+        { "text": "go crazy", "label": "S", "rule": "go crazy" },
+        { "text": "insane run", "label": "S", "rule": "insane" }
+      ]
+    },
+    {
+      "post_url": "https://www.tiktok.com/@synthetic_creator/video/7000000000000000003",
+      "comments": [
+        { "text": "criminal how underrated this is", "label": "S", "rule": "criminal" },
+        { "text": "disgusting range", "label": "S", "rule": "disgusting" },
+        { "text": "🔥🔥", "label": "S", "rule": "🔥" },
+        { "text": "🐐", "label": "S", "rule": "🐐" },
+        { "text": "slay", "label": "S", "rule": "slay" },
+        { "text": "you can't sing lol", "label": "C", "rule": "at creator" },
+        { "text": "where is this from", "label": "N", "rule": "question" },
+        { "text": "need the full version", "label": "S", "rule": "wanting more" }
+      ]
+    }
+  ]
+}
